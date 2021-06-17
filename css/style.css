@@ -19,7 +19,7 @@
     padding: 30px 40px;
 }
 
-.q {
+.quiz-body {
     display: none;
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
