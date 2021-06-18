@@ -8,6 +8,7 @@ var ansB2 = document.querySelector('answer2');
 var ansB3 = document.querySelector('answer3');
 var ansB4 = document.querySelector('answer4');
 var buttons = document.querySelectorAll('.btn');
+var quizBody = document.querySelector('button-answers');
 var secondsLeft = 61;
 var score = 0;
 
@@ -51,8 +52,8 @@ var questions = [{
     answer: "concat()"
 }]
 
-var questionIndex = 0;
-var score = 0;
+// var questionIndex = 0;
+// var score = 0;
 
 function startQuiz() {
     setTime();
@@ -61,13 +62,13 @@ function startQuiz() {
     
     // theDiv.innerHTML = questions[i];
 }
-function askQuestions(id) {
-    if (id < questions.length) {
-        qQuestions.textContent = questions[id].question;
-        ansB1.textContent = questions[id].choices[0];
-        ansB2.textContent = questions[id].choices[1];
-        ansB3.textContent = questions[id].choices[2];
-        ansB4.textContent = questions[id].choices[3];
+function askQuestions() {
+    for (let i = 0; i < questions.length; i++) {
+        qQuestions.textContent = questions[i].question;
+        ansB1.textContent = questions.question[i].choices[0];
+        ansB2.textContent = questions.question[i].choices[1];
+        ansB3.textContent = questions.question[i].choices[2];
+        ansB4.textContent = questions.question[i].choices[i];
     }
 }
 // const diffChoices = choices.map(
@@ -92,8 +93,25 @@ function showQuestions() {
     var questionIndex = 0;
     var currentQuestion = questions[questionIndex].question;
     var options = questions[questionIndex].choices;
+    for (var i = 0; i < options.length; i++) {
+    
+    
     document.getElementById('question').textContent = currentQuestion;
-    document.getElementById('answers').textContent = ' ';
+    document.getElementById('answer1').textContent = options[0];
+    document.getElementById('answer2').textContent = options[1];
+    document.getElementById('answer3').textContent = options[2];
+    document.getElementById('answer4').textContent = options[3];
+    }
+    // document.getElementById('button-answers').textContent = options;
+
+
+    // var choices = quiz.getQuestionIndex().choices;
+    //     for(var i = 0; i < choices.length; i++) {
+    //         var element = document.getElementById("choice" + i);
+    //         element.innerHTML = choices[i];
+    //         guess("btn" + i, choices[i]);
+    //     }
+    // askQuestions();
 
 
     // for (let i = 0; i < options.length; i++) {
